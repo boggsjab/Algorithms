@@ -1,7 +1,15 @@
 //import java.lang.*; //Math library if needed
 
 public class BinarySearch {
-    // divide-and-conquer
+    // divide-and-conquer.  pick a pivot point, starting index (0), and 
+    // ending index (array length-1).
+    // if the value at the pivot = the key, return the pivot.
+    // if the key is less than the pivot value, divide the array by
+    // setting the ending index to the position before the pivot (end=pivot-1).
+    // if the key is greater than the pivot value, divide the array
+    // by setting the starting index to the position after the pivot (start=pivot+1).
+    // repeat until the pivot==key or the starting index passes the ending index.
+
     // best-case O(1)
     // avg/worst-case O(logn)
     // input data must be sorted (ascending)
