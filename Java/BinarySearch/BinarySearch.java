@@ -1,10 +1,11 @@
-/**
- *
- * @author sL1m
- */
-//import java.lang.*; //Math.floor
+//import java.lang.*; //Math library if needed
 
 public class BinarySearch {
+    // divide-and-conquer
+    // best-case O(1)
+    // avg/worst-case O(logn)
+    // input data must be sorted (ascending)
+    
     // iterative binary search implementation
     public static int BinarySearch(int[] arr, int k){
         int     left=0, 
@@ -40,11 +41,14 @@ public class BinarySearch {
     public static void main(String[] args) {
         int[] arr = {1,4,5,6,7,10,14,16,17,20};
         
+        for(int work : arr){System.out.print(work+" ");}
+        System.out.println();
+        
         int r = BinarySearch(arr,20);
-        System.out.println(r);
+        System.out.println("Iter: k=20 r="+r);
         
         r = BinarySearchRecur(arr,13,0,arr.length-1);
-        System.out.println(r);
+        System.out.println("Recurs: k=13 r="+r);
     }
     
 }
