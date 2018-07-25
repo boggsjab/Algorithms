@@ -16,7 +16,7 @@ public class BinarySearch {
 
     // iterative binary search implementation
     public static int BinarySearch(int[] arr, int k){
-        int     left=0, 
+        int left=0, 
             right=arr.length-1, 
             pivot=0;
 
