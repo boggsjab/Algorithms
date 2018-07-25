@@ -18,19 +18,19 @@ class InsertionSort{
     }
     
     // recursive Insertion sort
-    public static void InsertionSortRecurs(int[] a, int pivot){
-       if(pivot>=a.length){ return; }
+    public static void InsertionSortRecurs(int[] a, int len){
+       if(len<2){ return; }
        
-       int k=a[pivot];
-       int j=pivot-1;
+       InsertionSortRecurs(a, len-1);
+       
+       int k=a[len-1];
+       int j=len-2;
        
        while(j>=0 && k<a[j]){
            a[j+1]=a[j];
            j--;
        }
        a[j+1]=k;
-       
-       InsertionSortRecurs(a, ++pivot);
     }
     
     public static void printA(int[] a){
@@ -40,14 +40,14 @@ class InsertionSort{
 
     public static void main(String args[]){
         int[] 	a = {7,3,5,25,63,3,2,1,67,86,35,52};
-        int[]   b = {2,24,52,78,75,3,56,-2,75,8,9,64,37};
+        int[]   b = {26,24,52,78,75,3,56,-2,8,9,64,37};
 
         printA(a);
         InsertionSort(a);
         printA(a);
         
         printA(b);
-        InsertionSortRecurs(b,1);
+        InsertionSortRecurs(b,b.length);
         printA(b);   
     }
 }
