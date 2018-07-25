@@ -52,7 +52,7 @@ public class BubbleSort{
         int[] a={2,5,34,6,46,53};
         int[] b={3,6,2,25,32,31,26,4};
 
-            // iterative
+        // iterative
         printA(a);
         BubbleSort(a);	
         printA(a);
