@@ -1,13 +1,26 @@
 public class BubbleSort{
 
     // BubbleSort
-    //	compare consecutive values in an array (i, i+1)and swap them if
-    //	i<i+1, pushing the largest value to the end of the array.  repeat
-    //	until the entirety of the array is sorted
-
-    //	-average/worst case complexity O(n^2)
+    //	-average/worst case complexity O(n2)
     //	-best case complexity O(n)
-
+    /*
+    Wikipedia article
+    https://en.wikipedia.org/wiki/Bubble_sort
+    
+    Bubble sort, sometimes referred to as sinking sort, is a
+    simple sorting algorithm that repeatedly steps through the
+    list to be sorted, compares each pair of adjacent items and 
+    swaps them if they are in the wrong order. The pass through 
+    the list is repeated until no swaps are needed, which indicates 
+    that the list is sorted. The algorithm, which is a comparison 
+    sort, is named for the way smaller or larger elements "bubble"
+    to the top of the list. Although the algorithm is simple, it is 
+    too slow and impractical for most problems even when compared to 
+    insertion sort.[2] Bubble sort can be practical if the input 
+    is in mostly sorted order with some out-of-order elements nearly
+    in position. 
+    */
+    
     // iterative Bubble sort
     public static void BubbleSort(int[] a){
         boolean sorted=false;
