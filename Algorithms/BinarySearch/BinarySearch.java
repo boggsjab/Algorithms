@@ -1,19 +1,29 @@
 //import java.lang.*; //Math.floor()
 
 public class BinarySearch {
-    // divide-and-conquer.  pick a pivot point, starting index (0), and 
-    // ending index (array length-1).
-    // if the value at the pivot = the key, return the pivot.
-    // if the key is less than the pivot value, divide the array by
-    // setting the ending index to the position before the pivot (end=pivot-1).
-    // if the key is greater than the pivot value, divide the array
-    // by setting the starting index to the position after the pivot (start=pivot+1).
-    // repeat until the pivot==key or the starting index passes the ending index.
-
+    // Binary search
     // best-case O(1)
     // avg/worst-case O(logn)
     // input data must be sorted (ascending)
 
+    // Wikipedia article
+    // https://en.wikipedia.org/wiki/Binary_search_algorithm
+    
+    /*
+    Binary search, also known as half-interval
+    search,[1] logarithmic search,[2] or binary chop,[3] is a search
+    algorithm that finds the position of a target value within a sorted
+    array.[4][5] Binary search compares the target value to the middle
+    element of the array. If they are not equal, the half in which the
+    target cannot lie is eliminated and the search continues on the
+    remaining half, again taking the middle element to compare to the 
+    target value, and repeating this until the target value is found. 
+    If the search ends with the remaining half being empty, the target 
+    is not in the array. Even though the idea is simple, implementing 
+    binary search correctly requires attention to some subtleties about 
+    its exit conditions and midpoint calculation. 
+    */
+    
     // iterative binary search
     public static int BinarySearch(int[] a, int k){
         int left=0, 
