@@ -54,6 +54,8 @@ public class BinarySearch {
         return r;
     }
 
+    // prints the contents of array, a, and moves
+    // cursor to next line
     public static void printA(int[] a){
         for(int work:a){ System.out.print(work+" "); }
         System.out.println();
