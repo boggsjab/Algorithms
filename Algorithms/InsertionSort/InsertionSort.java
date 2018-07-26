@@ -1,4 +1,4 @@
-class InsertionSort{
+public class InsertionSort{
     // Insertion Sort
     // best-case: O(n)
     // worst/average case: O(n2)
