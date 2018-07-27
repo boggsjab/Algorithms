@@ -24,7 +24,7 @@ public class Fibonacci{
     public static int fiboNRecurs(int n){
         if(n<1) { return 0; }
         if(n==1){ return 1; }
-        else if(n==2){ return 1; }
+        if(n==2){ return 1; }
         return fiboNRecurs(n-1) + fiboNRecurs(n-2);
     }
     
