@@ -1,5 +1,3 @@
-//import java.lang.*; //Math.floor()
-
 public class BinarySearch {
     // Binary search
     // best-case O(1)
