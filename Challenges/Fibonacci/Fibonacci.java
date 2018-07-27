@@ -7,39 +7,35 @@ public class Fibonacci{
     */
 
     // iterative
-    public static int[] fiboN(int n){
-        int[] a= new int[n];
-        
+    public static int fiboN(int n){
+        int sum=0;
         int first=1;
         int second=0;
         
         for(int i=0; i<n; i++){
-            a[i]=first+second;
-            first=second;
-            second=a[i];            
+            sum=first+second;
+            first=second;        
+            second=sum;
         }
-        
-        return a;
+        return sum;
     }
     
     // recursive
-    public static int[] fiboNRecurs(int[] a, int n, int first, int second){
-        // base case
-        if(n<1){ return a; }
-        // reduce problem
-        a=fiboNRecurs(a,n-1, first,second);
-        // perform essential operations
-        a[n-1]=first+second;
-        first=second;
-        second=a[n-1];
-        
-        return a;
+    public static int fiboNRecurs(int n){
+        if(n<1) { return 0; }
+        if(n==1){ return 1; }
+        else if(n==2){ return 1; }
+        return fiboNRecurs(n-1) + fiboNRecurs(n-2);
     }
     
     // memoized
-    public static int[] fiboNMemo(int[] a, int n, int first, int second){
-        
-        return a;
+    public static int fiboNMemo(int n, int[] memo){  
+        if(n<1){ return 0; }
+        if(n==1){ return 1; }
+        if(n==2){ return 1; }
+        if(memo[n]>0){ return memo[n]; }
+        memo[n] = fiboNMemo(n-1,memo) + fiboNMemo(n-2,memo); 
+        return memo[n];
     }
     
     // prints the contents of array, a, and moves
@@ -48,40 +44,21 @@ public class Fibonacci{
         for(int work:a){ System.out.print(work+" "); }
         System.out.println();
     }
-    
+
     public static void main(String args[]){
-        int     n=5000;
-        int[]   a;
-        int[]   b=new int[n];
-       
-        final long q0=System.nanoTime();
+        int     n=4000;
+        int[]   memo=new int[n+1];
+        
         final long p0=System.currentTimeMillis();
-        
-        final long t0=System.currentTimeMillis();
-        a=fiboN(n);
-        final long t1=System.currentTimeMillis();
-        
-        final long t2=System.currentTimeMillis();
-        b=fiboNRecurs(b,n,1,0);
-        final long t3=System.currentTimeMillis();
-        
-        final long n0=System.nanoTime();
-        a=fiboN(n);
-        final long n1=System.nanoTime();
-        
-        final long n2=System.nanoTime();
-        a=fiboN(n);
-        final long n3=System.nanoTime();
-       
-        final long q1=System.nanoTime();
+        final long x = fiboNMemo(n,memo);
         final long p1=System.currentTimeMillis();
-        //printA(a);
-    
-        System.out.format("iterative algorithm time: %tL ms%n",t1-t0);
-        System.out.format("iterative algorithm time: %tN ns%n",n1-n0);
-        System.out.format("recursive algorithm time: %tL ms%n",t3-t2);
-        System.out.format("recursive algorithm time: %tN ns%n",n3-n2);
-        System.out.format("total time: %tL ms%n",p1-p0);
-        System.out.format("total time: %tN ns%n",q1-q0);
+        System.out.format("%d%n",p1-p0);  
+        
+        final long p2=System.currentTimeMillis();
+        final long y = fiboN(n);
+        final long p3=System.currentTimeMillis();
+        System.out.format("%d%n",p3-p2);
+        
+        System.out.format("%d=x%n%d=y%n",x,y);
     }
 }
